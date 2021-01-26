@@ -43,10 +43,13 @@ Setup Instructions:
  
 7.  Test out setup and webpage (default port is 5001)
     - cd SiriGarage
+    
     Test Relay connections
     - python3 relaytest.py
+    
     Test Magnetic Reed Switches
     - python3 log.py
+    
     Test out Webpage
     - python3 siriweb.py
       - Open your web browser to: Rasp_Pi_IP_Address:5001
