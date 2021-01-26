@@ -36,6 +36,7 @@ sudo apt-get install rpi.gpio
 4.  --Next install the Flask Web Server: 
 
 sudo apt-get install python3-pip
+
 sudo pip3 install flask
 
 5.  --Install the GIT application so you can download my Github code: 
