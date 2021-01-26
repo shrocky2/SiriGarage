@@ -1,0 +1,113 @@
+<html><head>
+<meta name="viewport" content="width=device-width">
+<title>Multiple Garage Door Status</title>
+<link href="/images/icon.png" rel="shortcut icon">
+
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+}
+</style>
+</head>
+
+
+<table><tr><td valign="top" align="center">
+<img src="/images/steve.png"><br><br>
+<a href="/">Garage Home</a><br><br>
+<a href="/Settings">General Settings</a><br><br>
+<a href="/page/sirisetup.html">SIRI Setup Instructions</a><br><br>
+
+<b><u>Steve Does Stuff!</u></b><br>
+<a href="https://youtube.com/shrocky2">YouTube</a><br><br>
+<a href="https://github.com/shrocky2/SiriGarage">GitHub</a><br>
+
+
+</td><td>
+<form action="/ChangeSettings" method="post" id="SettingsForm">
+
+<table>
+<tr><td align="right">Number of Garage Doors:</td><td>
+  <select name="NUMBER_OF_DOORS" id="doors">
+    <option value="{{ NUMBER_OF_DOORS }}" selected>{{ NUMBER_OF_DOORS }}</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select>
+</td>
+<td  rowspan="4" style="width:450px"> These settings will determine how many garage doors you have.<br><br>
+You can give each door a unique name.
+</td>
+</tr>
+<tr><td align="right">Door 1 Name:</td><td><input type="text" name="DOOR_1_NAME" value="{{ DOOR_1_NAME }}"></td></tr>
+<tr><td align="right">Door 2 Name:</td><td><input type="text" name="DOOR_2_NAME" value="{{ DOOR_2_NAME }}"></td></tr>
+<tr><td align="right">Door 3 Name:</td><td><input type="text" name="DOOR_3_NAME" value="{{ DOOR_3_NAME }}"></td></tr>
+<tr><td&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td align="right">Number of Sensors Per Door:</td><td>
+  <select name="SENSORS_PER_DOOR" id="doorsensors">
+    <option value="{{ SENSORS_PER_DOOR }}" selected>{{ SENSORS_PER_DOOR }}</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+  </select>
+</td>
+<td>How many magnetic reed switches (door sensors) do you have on each door?</td>
+</tr>
+
+<tr><td&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td align="right">Enable Password Control:</td><td align="center">
+<input type="radio" name="ENABLE_PASSWORD" value="YES"{{ENABLE_PASSWORD_YES }}>&nbsp; YES &nbsp;&nbsp;
+<input type="radio" name="ENABLE_PASSWORD" value="NO"{{ENABLE_PASSWORD_NO }}>&nbsp; NO</td>
+<td  rowspan="2"> Turn On/Off the ability to open/close the garage door with a password<br>
+This password will be NUMBERS ONLY.
+</td></tr>
+<tr><td align="right">Garage Door Password:<br><i>(Default: 12345678)</i></td><td><input type="text" name="PASSWORD" value="{{ PASSWORD }}"></td>
+</tr>
+<tr><td&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td align="right">Enable SIRI Control:</td><td align="center">
+<input type="radio" name="ENABLE_SIRI" value="YES"{{ENABLE_SIRI_YES }}>&nbsp; YES &nbsp;&nbsp;
+<input type="radio" name="ENABLE_SIRI" value="NO"{{ENABLE_SIRI_NO }}>&nbsp; NO</td>
+<td  rowspan="2"> Turn On/Off the ability to open/close the garage door with SIRI<br>
+This Password can be any alphanumeric & symbol password.
+</td></tr>
+<tr><td align="right">SIRI Password:<br><i>(Default: 12345678)</i></td><td><input type="text" name="SIRI_PASSWORD" value="{{ SIRI_PASSWORD }}"></td>
+</tr>
+<tr><td&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td align="right">Default Webpage Port:</td><td><input type="text" name="PORT" value="{{ PORT }}"></td></tr>
+<tr><td align="right">Admin Name:</td><td><input type="text" name="ADMIN" value="{{ ADMIN }}"></td></tr>
+<tr><td align="right">Admin Password:</td><td><input type="text" name="ADMIN_PASS" value="{{ ADMIN_PASS }}"></td></tr>
+
+</td></table><br><br>
+<input type="submit" value="Save Settings" style="font-size:14pt;color:white;background-color:green;border:2px solid #336600;padding:3px">
+</form>
+<br><hr><br>
+<form action="/Settings_Save_Bootfile" method="post" id="BootFileForm">
+
+Copy this text and paste before the last line that says "exit 0"<br>
+<textarea name="" id="" rows="3" cols="100" onClick="this.select();">
+sudo python {{ APP_PATH }} &
+sudo python {{ LOG_FILE }} &
+</textarea>
+
+<textarea name="AutoStartFile" id="AutoStartFile" rows="25" cols="100">
+{{ AutoStartFile }}
+</textarea> 
+<br><br>
+<input type="submit" value="Save Boot File" style="font-size:14pt;color:white;background-color:green;border:2px solid #336600;padding:3px">
+</form>
+<br><hr><br>
+
+<form action="/Delete_Log_File" method="post" id="DeleteLogForm">
+<a href="/Log">Click for Log File</a> &nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" value="Delete Log File" style="font-size:14pt;color:white;background-color:green;border:2px solid #336600;padding:3px">
+</form>
+
+
+</td></tr></table>
+<br><br><br><br><br><br>
+</html>

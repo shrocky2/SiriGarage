@@ -1,0 +1,67 @@
+<html><head>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link href="/images/icon.png" rel="shortcut icon">
+<title>Garage Status</title>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("ShowHide");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+} 
+function ShowEnterButton(num) {
+  var x = document.getElementById("EnterButton");
+    x.style.display = "block";
+  var y = document.getElementById("door" + num);
+    y.checked = true;
+} 
+
+</script>
+
+
+</head>
+<body bgcolor="{{ color }}">
+<center>
+<br>
+
+<button onclick="myFunction()">Click Here to Operate Garage Door</button><br><br>
+
+<div id="ShowHide" style="display: none;">
+	<form action="/" method="post" id="garageform">
+	<input id="garagecode" name="garagecode" type="text" pattern="[0-9]*" value="" STYLE="background-color:white;"><br><br>
+        
+
+<span align=center style="display: {{ door1visable }};" onclick="ShowEnterButton(1)"><input type="radio" id="door1" name="garagedoorradio" value="door1" onclick="ShowEnterButton(1)"><big><big> {{ D1Name }} </big></big></span>
+<span align=center style="display: {{ door2visable }};" onclick="ShowEnterButton(2)">&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="door2" name="garagedoorradio" value="door2" onclick="ShowEnterButton(2)"><big><big> {{ D2Name }} </big></big></span>
+<span align=center style="display: {{ door3visable }};" onclick="ShowEnterButton(3)">&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="door3" name="garagedoorradio" value="door3" onclick="ShowEnterButton(3)"><big><big> {{ D3Name }} </big></big></span>
+	<br><br>
+	<button id="EnterButton" style="display: none;" onclick="document.forms['garageform'].submit();">Click Picture Below to Activate Doors</button>
+	</form>
+</div> 
+<br>
+
+<table>
+
+<tr><td align=center style="display: {{ door1visable }};">
+<span style="display: {{ door1visable }};">
+<img src="/images/{{ door1status }}" width={{ doorstatussize }}% onclick="document.forms['garageform'].submit();"><br><big><big>{{ D1Name }}</big></big></span>
+
+</td><td align=center style="display: {{ door2visable }};">
+<span style="display: {{ door2visable }};">
+<img src="/images/{{ door2status }}" width={{ doorstatussize }}% onclick="document.forms['garageform'].submit();"><br><big><big>{{ D2Name }}</big></big></span>
+
+</td><td align=center style="display: {{ door3visable }};">
+<span style="display: {{ door3visable }};">
+<img src="/images/{{ door3status }}" width={{ doorstatussize }}% onclick="document.forms['garageform'].submit();"><br><big><big>{{ D3Name }}</big></big></span>
+
+</td></tr></table>
+<br><br><a href="/Log">Click for Log File</a><br><br>
+
+<a href="http://www.YouTube.com/shrocky2"><img src="/images/steve.png" style="vertical-align: middle;" width=50><span style="vertical-align: middle;">  Built by Steve Does Stuff! - 2021</span>
+<br><br>
+</center>
+</body></html>
