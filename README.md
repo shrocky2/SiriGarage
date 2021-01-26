@@ -25,23 +25,29 @@ Setup Instructions:
 --------------------------------------------------------------------
 
 1.  --First setup your Raspberry Pi: https://www.youtube.com/watch?v=EeEU_8HG9l0 
-2.  --Lets upgrade the apt-get program: 
+2.  --Lets upgrade the apt-get program:
+
 sudo apt-get update
 
-3.  --To Allow us to use the GPIO pins on the Pi,
+3.  --To Allow us to use the GPIO pins on the Pi:
+
 sudo apt-get install rpi.gpio
 
 4.  --Next install the Flask Web Server: 
+
 sudo apt-get install python3-pip
 sudo pip3 install flask
 
 5.  --Install the GIT application so you can download my Github code: 
+
 sudo apt-get install git 
 
 6.  --Download my Github code: 
+
 sudo git clone https://github.com/shrocky2/SiriGarage
  
 7.  --Test out setup and webpage (default port is 5001)
+
 cd SiriGarage
      --Test Relay connections
 python3 relaytest.py
@@ -52,10 +58,12 @@ python3 siriweb.py
      --Open your web browser to: Rasp_Pi_IP_Address:5001
 
  8.  --To Change Settings, including renaming doors, passwords, enabling Siri, & Setting Program to AutoStart on Boot:
+ 
 Open your web browser to: Rasp_Pi_IP_Address:5001/Settings
 Default Username:Password are admin:admin
 
 9.  --To Setup your iPhone & Apple Watch to control the garage door, follow the steps at:
+
 Rasp_Pi_IP_Address:5001/page/sirisetup.html
 11.  --Reboot system and let program autostart
 sudo reboot
@@ -67,7 +75,7 @@ sudo reboot
 Wiring Diagram:
 --------------------------------------------------------------------
 
-<img src="https://github.com/shrocky2/GarageWeb/blob/master/Mulit Door Wiring Diagram.jpg">
+<img src="https://github.com/shrocky2/SiriGarage/blob/main/Mulit%20Door%20Wiring%20Diagram.jpg">
 
 --------------------------------------------------------------------
 Additional Videos:
