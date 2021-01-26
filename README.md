@@ -49,26 +49,37 @@ sudo git clone https://github.com/shrocky2/SiriGarage
 7.  --Test out setup and webpage (default port is 5001)
 
 cd SiriGarage
+
      --Test Relay connections
+     
 python3 relaytest.py
+
      --Test Magnetic Reed Switches
+     
 python3 log.py
+
      --Test out Webpage
+     
 python3 siriweb.py
+
      --Open your web browser to: Rasp_Pi_IP_Address:5001
 
  8.  --To Change Settings, including renaming doors, passwords, enabling Siri, & Setting Program to AutoStart on Boot:
  
 Open your web browser to: Rasp_Pi_IP_Address:5001/Settings
+
 Default Username:Password are admin:admin
 
 9.  --To Setup your iPhone & Apple Watch to control the garage door, follow the steps at:
 
 Rasp_Pi_IP_Address:5001/page/sirisetup.html
+
 11.  --Reboot system and let program autostart
+
 sudo reboot
 
 12.  --Set up Port Forwarding on your Router to allow access when away from home.
+
      --Once setup, turn off WiFi on your phone and test. You'll need to know the REAL address of your home router.
 
 --------------------------------------------------------------------
