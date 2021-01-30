@@ -71,7 +71,7 @@ Setup Instructions:
 Wiring Diagram:
 --------------------------------------------------------------------
 
-<img src="https://github.com/shrocky2/SiriGarage/blob/main/Mulit%20Door%20Wiring%20Diagram.jpg">
+<img src="https://github.com/shrocky2/SiriGarage/blob/main/static/images/Mulit%20Door%20Wiring%20Diagram.jpg">
 
 --------------------------------------------------------------------
 Additional Videos:
