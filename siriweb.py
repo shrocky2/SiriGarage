@@ -113,7 +113,7 @@ def index():
 				time.sleep(1)
 				GPIO.output(13, GPIO.HIGH)
 				time.sleep(2)
-	
+
 		else:  		# 12345678 is the Password that Opens Garage Door (Code if Password is Incorrect)
 			if code == "":
 				code = "NULL"
@@ -197,16 +197,16 @@ def index():
 		bgcolor = BG_COLOR_OPEN
 
 	return render_template('doorstatus.txt',
-		color = bgcolor, 
-		door1status = door1image, 
-		door2status = door2image, 
-		door3status = door3image, 
-		doorstatussize = imagesize, 
-		door1visable = door1, 
-		door2visable = door2, 
-		door3visable = door3, 
-		D1Name = DOOR_1_NAME, 
-		D2Name = DOOR_2_NAME, 
+		color = bgcolor,
+		door1status = door1image,
+		door2status = door2image,
+		door3status = door3image,
+		doorstatussize = imagesize,
+		door1visable = door1,
+		door2visable = door2,
+		door3visable = door3,
+		D1Name = DOOR_1_NAME,
+		D2Name = DOOR_2_NAME,
 		D3Name = DOOR_3_NAME)
 
 
@@ -216,10 +216,10 @@ def settings():
 		if request.form['ADMIN'] == ADMIN and request.form['ADMIN_PASS'] == ADMIN_PASS:
 			#open text file in read mode
 			AutoStart = open("/etc/rc.local", "r")
-	 	
+
 			#read whole file to a string
 			AutoStartFile = AutoStart.read()
- 	
+
 			#close file
 			AutoStart.close()
  
@@ -317,10 +317,10 @@ def Settings_Save_Bootfile():
 
 	#open text file in write mode (this will erase current file)
 	AutoStart = open("/etc/rc.local", "w")
- 
+
 	#writes whole string to file
 	AutoStart.write(StartFile)
- 
+
 	#close file
 	AutoStart.close()
 
@@ -334,7 +334,7 @@ def Delete_Log_File():
 	DeleteLogFile = open("static/log.txt", "w")
 
 	DeleteLogFile.write(datetime.now().strftime("Log File Erased -- %Y/%m/%d -- %H:%M \n"))
- 
+
 	#close file
 	DeleteLogFile.close()
 
@@ -443,7 +443,6 @@ def GarageSiri():
 				print("Garage is already closed, do nothing.")
 				return 'Door 1 is already closed'
 
-
 		if what_door == "Door2" and dowhat == "Open":
 			if GPIO.input(29) == GPIO.LOW:
 				print("Door 2 is currently Closed, let's open it.")
@@ -486,6 +485,7 @@ def GarageSiri():
 				print("Garage is already closed, do nothing.")
 				return 'Door 2 is already closed'
 
+		return 'We have a problem with your Siri shortcut entries' 
 	else:
 		return 'We have a problem'
 
