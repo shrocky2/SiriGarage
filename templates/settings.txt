@@ -90,8 +90,8 @@ This Password can be any alphanumeric & symbol password.
 
 Copy this text and paste before the last line that says "exit 0"<br>
 <textarea name="" id="" rows="3" cols="100" onClick="this.select();">
-sudo python {{ APP_PATH }} &
-sudo python {{ LOG_FILE }} &
+sudo python3 {{ APP_PATH }} &
+sudo python3 {{ LOG_FILE }} &
 </textarea>
 
 <textarea name="AutoStartFile" id="AutoStartFile" rows="25" cols="100">
