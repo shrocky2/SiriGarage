@@ -45,13 +45,13 @@ Setup Instructions:
     - cd SiriGarage
     
     Test Relay connections
-    - python3 relaytest.py
+    - sudo python3 relaytest.py
     
     Test Magnetic Reed Switches
-    - python3 log.py
+    - sudo python3 log.py
     
     Test out Webpage
-    - python3 siriweb.py
+    - sudo python3 siriweb.py
       - Open your web browser to: Rasp_Pi_IP_Address:5001
 
  8.  To Change Settings, including renaming doors, passwords, enabling Siri, & Setting Program to AutoStart on Boot:
