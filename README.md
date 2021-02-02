@@ -65,7 +65,11 @@ Setup Instructions:
      - sudo reboot
 
 12.  Set up Port Forwarding on your Router to allow access when away from home.
-     - Once setup, turn off WiFi on your phone and test. You'll need to know the REAL address of your home router.
+     - You'll need to setup PORT FORWARDING on your home router to pass traffic from the internet to the Raspberry Pi.
+     - Check out this video for help with port forwarding: https://youtu.be/VhVV25zCFrQ
+     - To find out your External IP Address, Check this link: https://checkip.amazonaws.com
+     - Setup Siri using your External IP Address and the Port Number you setup in Port Forwarding.
+     - Once setup, turn off WiFi on your phone and test. You'll need to know the EXTERNALL address of your home router.
 
 --------------------------------------------------------------------
 Wiring Diagram:
@@ -76,6 +80,8 @@ Wiring Diagram:
 --------------------------------------------------------------------
 Additional Videos:
 --------------------------------------------------------------------
+My Original Raspberry Pi Controlled Garage Door Video: https://youtu.be/Fcx6wANw9KM
+
 Sonoff Garage Door Opener: https://youtu.be/f1JeKHraDf8
 
 How to set up your Raspberry Pi: https://youtu.be/EeEU_8HG9l0
