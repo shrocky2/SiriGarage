@@ -1,4 +1,4 @@
-print " Control + C to exit Program"
+print(" Control + C to exit Program")
 
 import time
 
