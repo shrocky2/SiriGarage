@@ -95,6 +95,18 @@ sudo python3 {{ LOG_FILE }} &
 </textarea>
 
 <textarea name="AutoStartFile" id="AutoStartFile" rows="25" cols="100">
+To prevent damaging the Auto Start File using my code, You will manually need to enter the code listed above into the Auto Start Program.<br><br>
+
+Back at the terminal window, enter the following code:<br>
+sudo nano /etc/rc.local<br><br>
+
+Copy the Code in the text field above, and paste that code in the rc.local file directly above the last line that says "exit 0"<br>
+Hit "Control + X" to exit, and press "Y" to save<br>
+Once the Pi reboots, our program should be running.<br><br>
+
+Below is an example of what the autostart program looks like<br>
+-----------------------------------------------------------------------<br>
+
 {{ AutoStartFile }}
 </textarea> 
 <br><br>
