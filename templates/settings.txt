@@ -86,7 +86,7 @@ This Password can be any alphanumeric & symbol password.
 <input type="submit" value="Save Settings" style="font-size:14pt;color:white;background-color:green;border:2px solid #336600;padding:3px">
 </form>
 <br><hr><br>
-<form action="/Settings_Save_Bootfile" method="post" id="BootFileForm">
+<form id="BootFileForm">
 
 Copy this text and paste before the last line that says "exit 0"<br>
 <textarea name="" id="" rows="3" cols="100" onClick="this.select();">
@@ -110,7 +110,6 @@ Below is an example of what the autostart program looks like<br>
 {{ AutoStartFile }}
 </textarea> 
 <br><br>
-<input type="submit" value="Save Boot File" style="font-size:14pt;color:white;background-color:green;border:2px solid #336600;padding:3px">
 </form>
 <br><hr><br>
 
