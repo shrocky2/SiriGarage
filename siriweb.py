@@ -310,23 +310,6 @@ def ChangeSettings():
 
 	return app.send_static_file('Settings_Saved.html')
 
-
-@app.route('/Settings_Save_Bootfile', methods=['POST'])
-def Settings_Save_Bootfile():
-	StartFile = request.form['AutoStartFile']
-
-	#open text file in write mode (this will erase current file)
-	# AutoStart = open("/etc/rc.local", "w")
-
-	#writes whole string to file
-	# AutoStart.write(StartFile)
-
-	#close file
-	# AutoStart.close()
-
-	return app.send_static_file('Settings_Saved.html')
-
-
 @app.route('/Delete_Log_File', methods=['POST'])
 def Delete_Log_File():
 
