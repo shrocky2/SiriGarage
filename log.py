@@ -135,7 +135,7 @@ try:
 					print(datetime.now().strftime("%Y/%m/%d -- %H:%M:%S  -- Door #3 Open"))
 				else:
 					logfile.write(datetime.now().strftime("%Y/%m/%d -- %H:%M:%S  -- Door #3 Opening/Closing \n"))
-\					print(datetime.now().strftime("%Y/%m/%d -- %H:%M:%S  -- Door #3 Opening/Closing"))
+					print(datetime.now().strftime("%Y/%m/%d -- %H:%M:%S  -- Door #3 Opening/Closing"))
 				logfile.close()
 				Door3_OpenTimer = 1
 			else:
