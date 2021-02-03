@@ -316,13 +316,13 @@ def Settings_Save_Bootfile():
 	StartFile = request.form['AutoStartFile']
 
 	#open text file in write mode (this will erase current file)
-	AutoStart = open("/etc/rc.local", "w")
+	# AutoStart = open("/etc/rc.local", "w")
 
 	#writes whole string to file
-	AutoStart.write(StartFile)
+	# AutoStart.write(StartFile)
 
 	#close file
-	AutoStart.close()
+	# AutoStart.close()
 
 	return app.send_static_file('Settings_Saved.html')
 
