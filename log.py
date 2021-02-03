@@ -11,7 +11,7 @@ logfile.write(datetime.now().strftime("     Program Starting -- %Y/%m/%d -- %H:%
 logfile.close()
 print(datetime.now().strftime("     Program Starting -- %Y/%m/%d -- %H:%M  -- Hello! \n"))
 
-print " Control + C to exit Program"
+print(" Control + C to exit Program")
 print(" Number of Doors: " + str(NUMBER_OF_DOORS))
 print(" Number of Sensors Per Door: " + str(SENSORS_PER_DOOR))
 
