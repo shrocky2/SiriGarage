@@ -1,4 +1,4 @@
-YouTube Video Instructions found here: Video Coming Soon!
+YouTube Video Instructions found here: https://youtu.be/wfsYFM-9Dns
 
 Setting up a Flask web server to control your garage door & display the door status & log usage. This Setup can control up to 3 garage doors and can also be controlled using Siri on you iPhone & Apple Watch
 
