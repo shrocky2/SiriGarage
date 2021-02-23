@@ -64,7 +64,7 @@ Setup Instructions:
 11.  Reboot system and let program autostart
      - sudo reboot
 
-12.  Set up Port Forwarding on your Router to allow access when away from home.
+12.  Set up Port Forwarding on your Router to allow access when away from home. (please note that this program is not a secure website (https), so it's best not to connect to this program on a public network like a coffee shop or hotel.)
      - You'll need to setup PORT FORWARDING on your home router to pass traffic from the internet to the Raspberry Pi.
      - Check out this video for help with port forwarding: https://youtu.be/VhVV25zCFrQ
      - To find out your External IP Address, Check this link: https://checkip.amazonaws.com
