@@ -61,6 +61,11 @@ Setup Instructions:
 9.  To Setup your iPhone & Apple Watch to control the garage door, follow the steps at:
     - Rasp_Pi_IP_Address:5001/page/sirisetup.html
 
+10.  Setup the Pi to autostart when the Pi boots.
+     - sudo nano /etc/rc.local
+     - Enter the 2 lines of code found on Rasp_Pi_IP_Address:5001/Settings before the last line that says "Exit 0"
+     - Control + X (to exit and save)
+
 11.  Reboot system and let program autostart
      - sudo reboot
 
