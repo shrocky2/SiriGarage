@@ -69,6 +69,7 @@ try:
 				logfile.write(datetime.now().strftime("%Y/%m/%d -- %H:%M:%S  -- Door #1 Opening/Closing \n"))
 				print(datetime.now().strftime("%Y/%m/%d -- %H:%M:%S  -- Door #1 Opening/Closing"))
 			logfile.close()
+		else:		
 			while GPIO.input(16) == GPIO.HIGH and GPIO.input(18) == GPIO.HIGH:
 				time.sleep(.5)
 			else:
