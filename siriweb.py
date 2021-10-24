@@ -108,7 +108,7 @@ def index():
 				time.sleep(1)
 				GPIO.output(11, GPIO.HIGH)
 				time.sleep(2)
-			if Door_To_Open == "door2":
+			if Door_To_Open == "door3":
 				GPIO.output(13, GPIO.LOW)
 				time.sleep(1)
 				GPIO.output(13, GPIO.HIGH)
