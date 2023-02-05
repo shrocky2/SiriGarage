@@ -32,7 +32,7 @@ function ShowEnterButton(num) {
 <button onclick="myFunction()">Click Here to Operate Garage Door</button><br><br>
 
 <div id="ShowHide" style="display: none;">
-	<form action="/" method="post" id="garageform">
+	<form action="/" method="post" id="garageform" autocomplete="off">
 	<input id="garagecode" name="garagecode" type="text" pattern="[0-9]*" value="" STYLE="background-color:white;"><br><br>
         
 
