@@ -14,9 +14,9 @@ Raspberry Pi Zero W on Adafruit: https://www.adafruit.com/product/3400
 
 Magnetic Reed Switch (You need at least 1 per door, 2 per door recommended): https://amzn.to/39YG7kU
 
-Jumper/Breadboard wire 120ct: https://amzn.to/2V3fFlV
+Jumper/Breadboard wire 120ct: https://amzn.to/3jvbcHI
 
-Hammer Header & Install Kit on Amazon: https://amzn.to/3b5RbxX
+Hammer Header & Install Kit on Amazon: https://amzn.to/3DEV8tG
 
 Hammer Headers on Adafruit: https://www.adafruit.com/product/3662
 
