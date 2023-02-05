@@ -51,6 +51,9 @@ directory = os.getcwd()
 APP_PATH = os.path.abspath(__file__)
 LOG_FILE = directory + '/log.py'
 
+global No_Refresh
+No_Refresh = int(datetime.now().strftime("%d%m"))
+Refresher = int(datetime.now().strftime("%d%m"))
 BadPassword = 0
 
 Any_Door_Open = 1			#Default Status, If any door is Not Closed, this will be greater than 0
@@ -93,11 +96,15 @@ print('-------------------------------------------')
 def index():
 	if request.method == 'POST':
 		global BadPassword
+		global No_Refresh
 		code = request.form['garagecode']
 		Door_To_Open = request.form.get('garagedoorradio', "UNKNOWN")
+		Password_Counter = int(request.form.get('No_Refresh', "0"))
 
-		if code == PASSWORD and ENABLE_PASSWORD == "YES" and BadPassword <= 5:  # 12345678 is the Default Password that Opens Garage Door (Code if Password is Correct)
+		if code == PASSWORD and ENABLE_PASSWORD == "YES" and Password_Counter == No_Refresh and BadPassword <= 5:  # 12345678 is the Default Password that Opens Garage Door (Code if Password is Correct)
 			print("Door requested to open: " + Door_To_Open)
+			No_Refresh = No_Refresh + 1;
+
 			if Door_To_Open == "door1":
 				GPIO.output(7, GPIO.LOW)
 				time.sleep(1)
@@ -108,12 +115,13 @@ def index():
 				time.sleep(1)
 				GPIO.output(11, GPIO.HIGH)
 				time.sleep(2)
-			if Door_To_Open == "door3":
+			if Door_To_Open == "door2":
 				GPIO.output(13, GPIO.LOW)
 				time.sleep(1)
 				GPIO.output(13, GPIO.HIGH)
 				time.sleep(2)
-
+			
+	
 		else:  		# 12345678 is the Password that Opens Garage Door (Code if Password is Incorrect)
 			if code == "":
 				code = "NULL"
@@ -197,16 +205,17 @@ def index():
 		bgcolor = BG_COLOR_OPEN
 
 	return render_template('doorstatus.txt',
-		color = bgcolor,
-		door1status = door1image,
-		door2status = door2image,
-		door3status = door3image,
-		doorstatussize = imagesize,
-		door1visable = door1,
-		door2visable = door2,
-		door3visable = door3,
-		D1Name = DOOR_1_NAME,
-		D2Name = DOOR_2_NAME,
+		Refresher = No_Refresh,
+		color = bgcolor, 
+		door1status = door1image, 
+		door2status = door2image, 
+		door3status = door3image, 
+		doorstatussize = imagesize, 
+		door1visable = door1, 
+		door2visable = door2, 
+		door3visable = door3, 
+		D1Name = DOOR_1_NAME, 
+		D2Name = DOOR_2_NAME, 
 		D3Name = DOOR_3_NAME)
 
 
@@ -216,10 +225,10 @@ def settings():
 		if request.form['ADMIN'] == ADMIN and request.form['ADMIN_PASS'] == ADMIN_PASS:
 			#open text file in read mode
 			AutoStart = open("/etc/rc.local", "r")
-
+	 	
 			#read whole file to a string
 			AutoStartFile = AutoStart.read()
-
+ 	
 			#close file
 			AutoStart.close()
  
@@ -310,6 +319,23 @@ def ChangeSettings():
 
 	return app.send_static_file('Settings_Saved.html')
 
+
+@app.route('/Settings_Save_Bootfile', methods=['POST'])
+def Settings_Save_Bootfile():
+	StartFile = request.form['AutoStartFile']
+
+	#open text file in write mode (this will erase current file)
+	AutoStart = open("/etc/rc.local", "w")
+ 
+	#writes whole string to file
+	AutoStart.write(StartFile)
+ 
+	#close file
+	AutoStart.close()
+
+	return app.send_static_file('Settings_Saved.html')
+
+
 @app.route('/Delete_Log_File', methods=['POST'])
 def Delete_Log_File():
 
@@ -317,7 +343,7 @@ def Delete_Log_File():
 	DeleteLogFile = open("static/log.txt", "w")
 
 	DeleteLogFile.write(datetime.now().strftime("Log File Erased -- %Y/%m/%d -- %H:%M \n"))
-
+ 
 	#close file
 	DeleteLogFile.close()
 
@@ -426,6 +452,7 @@ def GarageSiri():
 				print("Garage is already closed, do nothing.")
 				return 'Door 1 is already closed'
 
+
 		if what_door == "Door2" and dowhat == "Open":
 			if GPIO.input(29) == GPIO.LOW:
 				print("Door 2 is currently Closed, let's open it.")
@@ -468,7 +495,6 @@ def GarageSiri():
 				print("Garage is already closed, do nothing.")
 				return 'Door 2 is already closed'
 
-		return 'We have a problem with your Siri shortcut entries' 
 	else:
 		return 'We have a problem'
 
