@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html><head>
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
@@ -39,6 +40,7 @@ function ShowEnterButton(num) {
 <span align=center style="display: {{ door2visable }};" onclick="ShowEnterButton(2)">&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="door2" name="garagedoorradio" value="door2" onclick="ShowEnterButton(2)"><big><big> {{ D2Name }} </big></big></span>
 <span align=center style="display: {{ door3visable }};" onclick="ShowEnterButton(3)">&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="door3" name="garagedoorradio" value="door3" onclick="ShowEnterButton(3)"><big><big> {{ D3Name }} </big></big></span>
 	<br><br>
+	<input type="text" id="No_Refresh" name="No_Refresh" value="{{ Refresher }}" style="display: none;">
 	<button id="EnterButton" style="display: none;" onclick="document.forms['garageform'].submit();">Click Picture Below to Activate Doors</button>
 	</form>
 </div> 
